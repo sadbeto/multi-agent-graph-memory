@@ -1,0 +1,36 @@
+# Secrets and credentials
+.env
+*.env
+.env.*
+!.env.example
+*token*
+*secret*
+*credential*
+*key*.json
+id_rsa*
+id_ed25519*
+*.pem
+*.key
+
+# Runtime state
+*.log
+logs/
+state.db
+*.sqlite
+*.sqlite3
+sessions/
+cache/
+private/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
