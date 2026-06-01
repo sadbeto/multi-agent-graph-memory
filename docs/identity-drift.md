@@ -4,6 +4,8 @@
 
 When agents retrieve graph memory, they may receive facts about the wider agent system. If the context mentions the orchestrator, a specialist model may start answering as the orchestrator instead of as itself.
 
+In human terms: the agent reads too much of the room and starts acting like the wrong person.
+
 ## Example failure mode
 
 A security agent searches memory and retrieves:

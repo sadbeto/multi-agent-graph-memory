@@ -2,11 +2,11 @@
 
 ## 1. The default namespace is a safety risk
 
-If a write call omits `group_id`, data lands in the default namespace. Set the default namespace to a safe orchestrator namespace and still require explicit `group_id` in every write.
+If a write call omits `group_id`, data lands in the default namespace. Set that default to a safe orchestrator namespace and still require explicit `group_id` in every write.
 
 ## 2. `group_id` vs `group_ids` causes silent bugs
 
-Use `group_id` for writes and `group_ids` for reads/searches. Add examples directly into agent prompts to reduce mistakes.
+Use `group_id` for writes and `group_ids` for reads/searches. Put the examples right next to the prompt so the agent has no excuse to guess.
 
 ## 3. Hyphenated namespaces can break FalkorDB search paths
 
@@ -14,7 +14,7 @@ Use simple names like `security`, not `security-agent`.
 
 ## 4. Async ingestion needs verification
 
-A successful tool response can mean the episode was queued. Check retrieval after the extraction pipeline finishes.
+A successful tool response can just mean the episode was queued. Always check retrieval after the extraction pipeline finishes.
 
 ## 5. Identity drift is real
 
@@ -26,8 +26,12 @@ If an agent retrieves context that says "Hermes is the orchestrator" or lists al
 
 ## 6. Runtime checks matter more than backend checks
 
-Agents cannot use memory that only appears in direct database inspection. Verify through MCP.
+Agents cannot use memory that only appears in direct database inspection. Verify through MCP, the same way the agent will use it.
 
 ## 7. Public repos should be case studies, not backups
 
 A clean public case study is better for portfolio value and safer than dumping a private working directory.
+
+## 8. If it reads like a robot wrote it, trim it
+
+The docs should still sound like a human built the system, hit real problems, and learned real lessons.

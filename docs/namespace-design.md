@@ -4,6 +4,8 @@
 
 Each agent gets exactly one write namespace. Agents may read their own namespace and, if explicitly allowed, a small orchestrator summary namespace. They should not write to another agent's namespace.
 
+That sounds strict, but it is what keeps the whole thing sane.
+
 ## Public demo namespace map
 
 | Namespace | Owner | Purpose |

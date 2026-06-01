@@ -1,6 +1,8 @@
 # Roadmap
 
-## Phase 1: Documentation case study
+## Phase 1: Public case study
+
+Make the repo readable by somebody who did not live inside the build process.
 
 - Public-safe README
 - Architecture docs

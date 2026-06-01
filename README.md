@@ -1,14 +1,16 @@
 # Persistent Graph Memory for Multi-Agent AI Systems
 
-A public-safe architecture case study for giving specialized AI agents persistent, isolated, queryable memory using Graphiti, FalkorDB, MCP, and namespace-based routing.
+A public-safe case study for how I built a real multi-agent memory system that actually helps in day-to-day work.
 
-This repository documents the design pattern behind a personal AI "Guild": multiple specialized agents that each own a domain, remember prior context, and avoid contaminating each other's memory.
+In plain English: each specialist agent gets its own memory lane, its own rules, and its own way of finding past context without stepping on the other agents.
 
 > Status: documentation-first case study with sanitized examples and utility scripts. It intentionally does not include private prompts, real chat IDs, secrets, production logs, or personal memory data.
 
 ## Why this matters
 
 Most agent demos are stateless. They answer the current prompt, maybe use a scratchpad, and forget the rest.
+
+That works for a toy demo. It breaks down once the system has to remember decisions, avoid repetition, and stay useful after a restart.
 
 A useful long-running agent system needs:
 
@@ -49,9 +51,10 @@ Each agent has a namespace. Agents search and write only inside their namespace.
 
 1. Memory isolation beats one giant shared memory.
 2. Retrieval must be verified through the same MCP path agents use.
-3. Successful ingestion calls are not enough; async processing can fail later.
-4. Agent identity must be reinforced when graph context mentions other agents.
+3. A successful write is not the same as a usable memory.
+4. Agent identity has to be reinforced when graph context mentions other agents.
 5. Public demos should use fake agent names and fake memories, not production data.
+6. If the docs feel too robotic, they probably need a human pass.
 
 ## What is included
 
@@ -154,16 +157,18 @@ Do not commit:
 
 See `docs/safety-model.md` for the full public-release model.
 
-## Portfolio value
+## What this repo is really showing
 
 This project demonstrates:
 
-- Multi-agent architecture
+- Multi-agent architecture that feels operational, not hypothetical
 - MCP-based tool integration
 - Persistent graph memory
-- LLMOps-style verification discipline
+- Verification discipline for memory that may process asynchronously
 - Agent identity and memory-isolation design
 - Public-safe documentation of a private production system
+
+It is not trying to look fancy. It is trying to show what was actually built, what broke, and what had to be learned the hard way.
 
 ## License
 

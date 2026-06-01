@@ -4,6 +4,8 @@
 
 Build a multi-agent AI system where each specialist agent has persistent graph memory without contaminating the memory or identity of other agents.
 
+This is the boring-but-important part of the system: the part that keeps it useful after the novelty wears off.
+
 ## Components
 
 ### Hermes Agent runtime
@@ -71,10 +73,10 @@ Agents should search memory before answering when:
 
 ## Why namespaces instead of one shared graph
 
-One shared memory graph creates three problems:
+One shared memory graph sounds convenient at first. In practice it creates three problems:
 
 1. Retrieval noise: irrelevant facts from other domains appear in context.
 2. Safety leakage: an agent may see data it should not use.
 3. Identity drift: an agent may adopt the orchestrator's role or another agent's role when retrieved facts mention the wider system.
 
-Namespaces reduce all three.
+Namespaces reduce all three, and they make the system easier to explain to a human later.
