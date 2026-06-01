@@ -36,15 +36,15 @@
 
   <g font-family="JetBrains Mono, monospace" font-size="12" text-anchor="middle">
     <rect x="245" y="615" width="130" height="45" rx="8" fill="rgba(76, 29, 149, 0.5)" stroke="#a78bfa"/>
-    <text x="310" y="642" fill="#e9d5ff">orchestrator</text>
+    <text x="310" y="642" fill="#e9d5ff">hermes</text>
     <rect x="390" y="615" width="120" height="45" rx="8" fill="rgba(136, 19, 55, 0.45)" stroke="#fb7185"/>
-    <text x="450" y="642" fill="#ffe4e6">security</text>
+    <text x="450" y="642" fill="#ffe4e6">mrbeto</text>
     <rect x="525" y="615" width="120" height="45" rx="8" fill="rgba(120, 53, 15, 0.35)" stroke="#fbbf24"/>
-    <text x="585" y="642" fill="#fef3c7">markets</text>
+    <text x="585" y="642" fill="#fef3c7">pao</text>
     <rect x="660" y="615" width="100" height="45" rx="8" fill="rgba(6, 78, 59, 0.45)" stroke="#34d399"/>
-    <text x="710" y="642" fill="#dcfce7">dev</text>
+    <text x="710" y="642" fill="#dcfce7">zuck</text>
     <rect x="775" y="615" width="120" height="45" rx="8" fill="rgba(8, 51, 68, 0.45)" stroke="#22d3ee"/>
-    <text x="835" y="642" fill="#cffafe">planner</text>
+    <text x="835" y="642" fill="#cffafe">mira</text>
   </g>
 
   <rect x="70" y="235" width="220" height="100" rx="10" fill="#0f172a" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6,4"/>

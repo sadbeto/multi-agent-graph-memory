@@ -21,21 +21,21 @@ This repo documents architecture, not private operations.
 
 ## Use sanitized examples
 
-Replace private agents with generic stand-ins:
+Replace private details with public-safe stand-ins, but keep the real lane structure intact:
 
-- `OrchestratorAgent`
-- `SecurityAgent`
-- `MarketsAgent`
-- `DevAgent`
-- `PlannerAgent`
+- `Hermes`
+- `Mr.Beto`
+- `Pao`
+- `Mira`
+- `Zuck`
 
-Replace production namespaces with generic namespaces:
+Replace production namespaces with the live namespaces, but never leak channel IDs or private runtime data:
 
-- `orchestrator`
-- `security`
-- `markets`
-- `dev`
-- `planner`
+- `hermes`
+- `mrbeto`
+- `pao`
+- `mira`
+- `zuck`
 
 ## Recommended pre-publish scan
 

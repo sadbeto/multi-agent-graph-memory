@@ -1,30 +1,30 @@
 agents:
-  - name: OrchestratorAgent
-    namespace: orchestrator
+  - name: Hermes
+    namespace: hermes
     domain: routing and coordination
-    can_write_namespaces: [orchestrator]
-    can_read_namespaces: [orchestrator]
+    can_write_namespaces: [hermes]
+    can_read_namespaces: [hermes]
 
-  - name: SecurityAgent
-    namespace: security
+  - name: Mr.Beto
+    namespace: mrbeto
     domain: defensive security
-    can_write_namespaces: [security]
-    can_read_namespaces: [security]
+    can_write_namespaces: [mrbeto]
+    can_read_namespaces: [mrbeto]
 
-  - name: MarketsAgent
-    namespace: markets
+  - name: Pao
+    namespace: pao
     domain: market research and risk notes
-    can_write_namespaces: [markets]
-    can_read_namespaces: [markets]
+    can_write_namespaces: [pao]
+    can_read_namespaces: [pao]
 
-  - name: DevAgent
-    namespace: dev
-    domain: software development
-    can_write_namespaces: [dev]
-    can_read_namespaces: [dev]
-
-  - name: PlannerAgent
-    namespace: planner
+  - name: Mira
+    namespace: mira
     domain: planning and follow-up
-    can_write_namespaces: [planner]
-    can_read_namespaces: [planner]
+    can_write_namespaces: [mira]
+    can_read_namespaces: [mira]
+
+  - name: Zuck
+    namespace: zuck
+    domain: software development
+    can_write_namespaces: [zuck]
+    can_read_namespaces: [zuck]

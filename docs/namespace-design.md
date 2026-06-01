@@ -6,15 +6,15 @@ Each agent gets exactly one write namespace. Agents may read their own namespace
 
 That sounds strict, but it is what keeps the whole thing sane.
 
-## Public demo namespace map
+## Live namespace map, sanitized
 
 | Namespace | Owner | Purpose |
 |---|---|---|
-| `orchestrator` | OrchestratorAgent | System map, routing rules, public-safe overview |
-| `security` | SecurityAgent | Defensive security facts and hardening history |
-| `markets` | MarketsAgent | Market research and risk-management notes |
-| `dev` | DevAgent | Engineering decisions, APIs, dashboards, debugging lessons |
-| `planner` | PlannerAgent | Goals, reminders, planning context, follow-ups |
+| `hermes` | Hermes | System map, routing rules, public-safe overview |
+| `mrbeto` | Mr.Beto | Defensive security facts and hardening history |
+| `pao` | Pao | Market research and risk-management notes |
+| `mira` | Mira | Goals, reminders, planning context, follow-ups |
+| `zuck` | Zuck | Engineering decisions, APIs, dashboards, debugging lessons |
 
 ## Naming rules
 
@@ -32,22 +32,23 @@ Avoid:
 - `mr-security`
 - `dev.agent`
 - names with personal data
+- anything that leaks chat IDs, phone numbers, or private hostnames
 
 Recommended:
 
-- `security`
-- `markets`
-- `dev`
-- `planner`
-- `orchestrator`
+- `mrbeto`
+- `pao`
+- `mira`
+- `zuck`
+- `hermes`
 
 ## Write example
 
 ```json
 {
-  "name": "security-seed-v1",
-  "episode_body": "SecurityAgent owns defensive security memory. It tracks hardening decisions, scan summaries, and safe remediation notes.",
-  "group_id": "security"
+  "name": "mrbeto-seed-v1",
+  "episode_body": "Mr.Beto owns defensive security memory. It tracks hardening decisions, scan summaries, and safe remediation notes.",
+  "group_id": "mrbeto"
 }
 ```
 
@@ -56,23 +57,26 @@ Recommended:
 ```json
 {
   "query": "hardening decisions scan summaries",
-  "group_ids": ["security"],
+  "group_ids": ["mrbeto"],
   "max_facts": 10
 }
 ```
+
 
 ## The important asymmetry
 
 Write calls commonly use:
 
 ```text
-group_id: "security"
+group_id: "mrbeto"
 ```
+
 
 Search calls commonly use:
 
 ```text
-group_ids: ["security"]
+group_ids: ["mrbeto"]
 ```
+
 
 This is easy to get wrong and can silently write data to the default namespace.

@@ -28,7 +28,7 @@ The scripts in this repo use JSON-RPC over HTTP and initialize an MCP session be
 
 ## Verification path
 
-After seeding an episode, verify through the same path agents use:
+After seeding an episode, verify through the same path agents use. In the live Guild, that means the same namespace the lane would actually read from:
 
 1. `get_episodes(group_ids=[namespace])`
 2. `search_nodes(query=..., group_ids=[namespace])`

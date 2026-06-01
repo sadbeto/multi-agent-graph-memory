@@ -14,7 +14,7 @@ Make the repo readable by somebody who did not live inside the build process.
 ## Phase 2: Runnable local demo
 
 - Docker Compose demo with Graphiti + FalkorDB
-- Fake seeded memories
+- Sanitized seeded memories that mirror the live lanes
 - Namespace verification script
 - Minimal agent simulator
 

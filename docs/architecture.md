@@ -6,6 +6,13 @@ Build a multi-agent AI system where each specialist agent has persistent graph m
 
 This is the boring-but-important part of the system: the part that keeps it useful after the novelty wears off.
 
+The live Guild version has one orchestrator and four specialist lanes:
+- Hermes for routing and continuity
+- Mr.Beto for defensive security
+- Pao for market research
+- Mira for second-angle planning
+- Zuck for development
+
 ## Components
 
 ### Hermes Agent runtime
@@ -16,10 +23,10 @@ The main agent runtime exposes tools, routes work, and connects to MCP servers. 
 
 Each specialist agent owns one domain. Examples:
 
-- `SecurityAgent`: defensive security, scans, hardening, findings
-- `MarketsAgent`: market research, portfolio context, catalysts
-- `DevAgent`: code, APIs, dashboards, project docs
-- `PlannerAgent`: goals, reminders, follow-ups, second-angle review
+- `Mr.Beto`: defensive security, scans, hardening, findings
+- `Pao`: market research, portfolio context, catalysts
+- `Zuck`: code, APIs, dashboards, project docs
+- `Mira`: goals, reminders, follow-ups, second-angle review
 
 ### Graphiti MCP server
 

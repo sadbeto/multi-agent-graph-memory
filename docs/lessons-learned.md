@@ -10,7 +10,7 @@ Use `group_id` for writes and `group_ids` for reads/searches. Put the examples r
 
 ## 3. Hyphenated namespaces can break FalkorDB search paths
 
-Use simple names like `security`, not `security-agent`.
+Use simple names like `mrbeto`, not `security-agent`.
 
 ## 4. Async ingestion needs verification
 

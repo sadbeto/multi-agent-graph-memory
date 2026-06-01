@@ -8,10 +8,10 @@ mcp_servers:
     timeout_seconds: 30
 
 memory_policy:
-  default_group_id: orchestrator
+  default_group_id: hermes
   namespace_rules:
-    SecurityAgent: security
-    MarketsAgent: markets
-    DevAgent: dev
-    PlannerAgent: planner
-    OrchestratorAgent: orchestrator
+    Hermes: hermes
+    Mr.Beto: mrbeto
+    Pao: pao
+    Mira: mira
+    Zuck: zuck
