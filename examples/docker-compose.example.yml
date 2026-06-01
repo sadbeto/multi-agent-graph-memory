@@ -9,7 +9,7 @@ services:
   graphiti-mcp:
     image: graphiti-mcp:latest
     environment:
-      GRAPHITI_GROUP_ID: hermes
+      GRAPHITI_GROUP_ID: router
       GRAPHITI_MCP_HOST: 0.0.0.0
       GRAPHITI_MCP_PORT: 8000
       FALKORDB_HOST: falkordb

@@ -10,7 +10,7 @@ Use `group_id` for writes and `group_ids` for reads/searches. Put the examples r
 
 ## 3. Hyphenated namespaces can break FalkorDB search paths
 
-Use simple names like `mrbeto`, not `security-agent`.
+Use simple names like `security`, not `security-agent`.
 
 ## 4. Async ingestion needs verification
 
@@ -18,7 +18,7 @@ A successful tool response can just mean the episode was queued. Always check re
 
 ## 5. Identity drift is real
 
-If an agent retrieves context that says "Hermes is the orchestrator" or lists all agents, some models may start speaking as the orchestrator. Repeat identity boundaries in:
+If an agent retrieves context that says "the router is the orchestrator" or lists all lanes, some models may start speaking as the router. Repeat identity boundaries in:
 
 1. channel/system prompt
 2. agent documentation

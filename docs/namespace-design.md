@@ -10,11 +10,11 @@ That sounds strict, but it is what keeps the whole thing sane.
 
 | Namespace | Owner | Purpose |
 |---|---|---|
-| `hermes` | Hermes | System map, routing rules, public-safe overview |
-| `mrbeto` | Mr.Beto | Defensive security facts and hardening history |
-| `pao` | Pao | Market research and risk-management notes |
-| `mira` | Mira | Goals, reminders, planning context, follow-ups |
-| `zuck` | Zuck | Engineering decisions, APIs, dashboards, debugging lessons |
+| `router` | Router | System map, routing rules, public-safe overview |
+| `security` | Security lane | Defensive security facts and hardening history |
+| `research` | Research lane | Market research and risk-management notes |
+| `planning` | Planning lane | Goals, reminders, planning context, follow-ups |
+| `build` | Build lane | Engineering decisions, APIs, dashboards, debugging lessons |
 
 ## Naming rules
 
@@ -36,19 +36,19 @@ Avoid:
 
 Recommended:
 
-- `mrbeto`
-- `pao`
-- `mira`
-- `zuck`
-- `hermes`
+- `security`
+- `research`
+- `planning`
+- `build`
+- `router`
 
 ## Write example
 
 ```json
 {
-  "name": "mrbeto-seed-v1",
-  "episode_body": "Mr.Beto owns defensive security memory. It tracks hardening decisions, scan summaries, and safe remediation notes.",
-  "group_id": "mrbeto"
+  "name": "security-seed-v1",
+  "episode_body": "The security lane owns defensive security memory. It tracks hardening decisions, scan summaries, and safe remediation notes.",
+  "group_id": "security"
 }
 ```
 
@@ -57,7 +57,7 @@ Recommended:
 ```json
 {
   "query": "hardening decisions scan summaries",
-  "group_ids": ["mrbeto"],
+  "group_ids": ["security"],
   "max_facts": 10
 }
 ```
@@ -68,14 +68,14 @@ Recommended:
 Write calls commonly use:
 
 ```text
-group_id: "mrbeto"
+group_id: "security"
 ```
 
 
 Search calls commonly use:
 
 ```text
-group_ids: ["mrbeto"]
+group_ids: ["security"]
 ```
 
 

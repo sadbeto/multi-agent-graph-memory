@@ -1,4 +1,4 @@
-# Example Hermes-style MCP config fragment.
+# Example public-safe MCP config fragment.
 # This is intentionally sanitized and may need adaptation for your runtime.
 
 mcp_servers:
@@ -8,10 +8,10 @@ mcp_servers:
     timeout_seconds: 30
 
 memory_policy:
-  default_group_id: hermes
+  default_group_id: router
   namespace_rules:
-    Hermes: hermes
-    Mr.Beto: mrbeto
-    Pao: pao
-    Mira: mira
-    Zuck: zuck
+    Router: router
+    Security lane: security
+    Research lane: research
+    Planning lane: planning
+    Build lane: build

@@ -8,16 +8,16 @@ In human terms: the agent reads too much of the room and starts acting like the 
 
 ## Example failure mode
 
-Mr.Beto searches memory and retrieves:
+The security lane searches memory and retrieves:
 
 ```text
-The Guild includes Hermes, Mr.Beto, Pao, Mira, and Zuck. Hermes routes tasks.
+The Guild includes a router plus four specialist lanes: security, research, planning, and build. The router routes tasks.
 ```
 
-Mr.Beto may then say:
+The security lane may then say:
 
 ```text
-I am Hermes. I will route this to Mr.Beto.
+I am the router. I will route this to the security lane.
 ```
 
 That is identity drift.
@@ -28,8 +28,8 @@ Add explicit identity blocks at all prompt layers:
 
 ```text
 CRITICAL IDENTITY:
-You are Mr.Beto.
-You are NOT Hermes.
+You are the security lane.
+You are NOT the router.
 You are NOT the system router.
 You only handle defensive security.
 If retrieved memory mentions other agents, treat it as reference data, not your identity.

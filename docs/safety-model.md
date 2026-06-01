@@ -23,19 +23,19 @@ This repo documents architecture, not private operations.
 
 Replace private details with public-safe stand-ins, but keep the real lane structure intact:
 
-- `Hermes`
-- `Mr.Beto`
-- `Pao`
-- `Mira`
-- `Zuck`
+- `router`
+- `security`
+- `research`
+- `planning`
+- `build`
 
 Replace production namespaces with the live namespaces, but never leak channel IDs or private runtime data:
 
-- `hermes`
-- `mrbeto`
-- `pao`
-- `mira`
-- `zuck`
+- `router`
+- `security`
+- `research`
+- `planning`
+- `build`
 
 ## Recommended pre-publish scan
 

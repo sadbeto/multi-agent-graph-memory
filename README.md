@@ -28,7 +28,7 @@ This repo captures a working pattern for that.
 User / Chat Channels / CLI
         |
         v
-Hermes Agent runtime
+Router runtime
         |
         | MCP tools over Streamable HTTP
         v
@@ -38,11 +38,11 @@ Graphiti MCP Server
         v
 FalkorDB
         |
-        +-- graph: hermes        # orchestrator memory
-        +-- graph: mrbeto        # defensive security agent memory
-        +-- graph: pao           # investment research agent memory
-        +-- graph: mira          # planning / follow-up agent memory
-        +-- graph: zuck          # development agent memory
+        +-- graph: router        # orchestrator memory
+        +-- graph: security      # defensive security lane memory
+        +-- graph: research      # market research lane memory
+        +-- graph: planning      # planning / follow-up lane memory
+        +-- graph: build         # development lane memory
 ```
 
 Each agent has a namespace. Agents search and write only inside their namespace. The orchestrator routes incoming content to the correct agent and memory space.
@@ -89,11 +89,11 @@ This is the real lane structure I use, just without the private stuff.
 
 | Namespace | Agent | Domain |
 |---|---|---|
-| `hermes`        | Hermes    | Orchestration, routing, continuity, memory hygiene |
-| `mrbeto` | Mr.Beto | Defensive security, hardening, audit findings |
-| `pao` | Pao | Market research, risk notes, catalysts |
-| `mira` | Mira | Second-angle review, reminders, proactive context |
-| `zuck` | Zuck | Development, dashboards, APIs, engineering decisions |
+| `router`        | Router    | Orchestration, routing, continuity, memory hygiene |
+| `security` | Security lane | Defensive security, hardening, audit findings |
+| `research` | Research lane | Market research, risk notes, catalysts |
+| `planning` | Planning lane | Second-angle review, reminders, proactive context |
+| `build` | Build lane | Development, dashboards, APIs, engineering decisions |
 
 ## Quick start
 
@@ -106,15 +106,15 @@ This assumes you already have a Graphiti MCP server running locally.
 # 2. Seed one sanitized agent memory
 python3 scripts/seed_agent_memory.py \
   --url http://localhost:8000/mcp \
-  --group-id mrbeto \
-  --name mrbeto-seed-v1 \
+  --group-id security \
+  --name security-seed-v1 \
   --body-file examples/seed-episode.example.json
 
 # 3. Verify retrieval through MCP tools
 python3 scripts/verify_namespace.py \
   --url http://localhost:8000/mcp \
-  --group-id mrbeto \
-  --query "Mr.Beto defensive security"
+  --group-id security \
+  --query "security hardening"
 ```
 
 ## Important Graphiti/FalkorDB lessons
@@ -130,7 +130,9 @@ Passing `group_ids` to a write call can silently fall back to the default namesp
 
 ### Avoid hyphens in namespace names
 
-Some FalkorDB/RediSearch paths can break on hyphenated graph names. Prefer simple namespace IDs like `hermes`, `mrbeto`, `pao`, `mira`, and `zuck`.
+Some FalkorDB/RediSearch paths can break on hyphenated graph names. Prefer simple namespace IDs like `router`, `security`, `research`, `planning`, and `build`.
+
+Note: the public repo uses role labels instead of internal codenames.
 
 ### A successful write may only mean queued
 
