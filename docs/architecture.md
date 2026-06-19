@@ -7,6 +7,7 @@ Build a multi-agent AI system where each specialist agent has persistent graph m
 This is the boring-but-important part of the system: the part that keeps it useful after the novelty wears off.
 
 The live Guild version has one router and four specialist lanes:
+
 - Router for routing and continuity
 - Security lane for defensive security
 - Research lane for market research

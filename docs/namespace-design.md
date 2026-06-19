@@ -9,7 +9,7 @@ That sounds strict, but it is what keeps the whole thing sane.
 ## Live namespace map, sanitized
 
 | Namespace | Owner | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | `router` | Router | System map, routing rules, public-safe overview |
 | `security` | Security lane | Defensive security facts and hardening history |
 | `research` | Research lane | Market research and risk-management notes |
@@ -62,7 +62,6 @@ Recommended:
 }
 ```
 
-
 ## The important asymmetry
 
 Write calls commonly use:
@@ -71,12 +70,10 @@ Write calls commonly use:
 group_id: "security"
 ```
 
-
 Search calls commonly use:
 
 ```text
 group_ids: ["security"]
 ```
-
 
 This is easy to get wrong and can silently write data to the default namespace.
