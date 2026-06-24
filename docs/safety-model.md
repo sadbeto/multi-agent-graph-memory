@@ -29,13 +29,7 @@ Replace private details with public-safe stand-ins, but keep the real lane struc
 - `planning`
 - `build`
 
-Replace production namespaces with the live namespaces, but never leak channel IDs or private runtime data:
-
-- `router`
-- `security`
-- `research`
-- `planning`
-- `build`
+Never leak channel IDs, chat IDs, or private runtime data.
 
 ## Recommended pre-publish scan
 

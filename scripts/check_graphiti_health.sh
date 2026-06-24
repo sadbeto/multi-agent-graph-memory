@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-URL="${1:-http://localhost:8000/mcp}"
+URL="${1:-http://localhost:8000/mcp/}"
 
 printf 'Checking Graphiti MCP endpoint: %s\n' "$URL"
 status=$(curl -sS -o /tmp/graphiti_mcp_health.txt -w '%{http_code}' "$URL" || true)

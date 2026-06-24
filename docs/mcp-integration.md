@@ -21,7 +21,7 @@ See `examples/config.example.yaml`.
 A common local endpoint is:
 
 ```text
-http://localhost:8000/mcp
+http://localhost:8000/mcp/
 ```
 
 The scripts in this repo use JSON-RPC over HTTP and initialize an MCP session before calling tools.

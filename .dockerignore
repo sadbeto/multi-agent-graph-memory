@@ -1,0 +1,15 @@
+.git
+.github
+.gitignore
+.markdownlint.json
+*.md
+!examples/
+docs/
+diagrams/
+scripts/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+*.env

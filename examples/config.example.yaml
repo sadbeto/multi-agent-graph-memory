@@ -4,7 +4,7 @@
 mcp_servers:
   graphiti:
     transport: streamable_http
-    url: http://localhost:8000/mcp
+    url: http://localhost:8000/mcp/
     timeout_seconds: 30
 
 memory_policy:

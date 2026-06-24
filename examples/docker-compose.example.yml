@@ -7,14 +7,17 @@ services:
       - falkordb_data:/data
 
   graphiti-mcp:
-    image: graphiti-mcp:latest
+    # Official Graphiti MCP server image from Zep
+    image: zepai/knowledge-graph-mcp:latest
     environment:
       GRAPHITI_GROUP_ID: router
       GRAPHITI_MCP_HOST: 0.0.0.0
       GRAPHITI_MCP_PORT: 8000
       FALKORDB_HOST: falkordb
       FALKORDB_PORT: 6379
-      # OPENAI_API_KEY should come from your local environment or secret manager.
+      # Set your OpenAI API key in your environment before running:
+      #   export OPENAI_API_KEY=your-key
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
     ports:
       - "8000:8000"
     depends_on:

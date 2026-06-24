@@ -109,14 +109,14 @@ docker compose -f examples/docker-compose.example.yml up -d
 ### 2. Check health
 
 ```bash
-./scripts/check_graphiti_health.sh http://localhost:8000/mcp
+./scripts/check_graphiti_health.sh http://localhost:8000/mcp/
 ```
 
 ### 3. Seed a sanitized agent memory
 
 ```bash
 python3 scripts/seed_agent_memory.py \
-  --url http://localhost:8000/mcp \
+  --url http://localhost:8000/mcp/ \
   --group-id security \
   --name security-seed-v1 \
   --body-file examples/seed-episode.example.json
@@ -126,7 +126,7 @@ python3 scripts/seed_agent_memory.py \
 
 ```bash
 python3 scripts/verify_namespace.py \
-  --url http://localhost:8000/mcp \
+  --url http://localhost:8000/mcp/ \
   --group-id security \
   --query "security hardening"
 ```

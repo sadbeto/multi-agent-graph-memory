@@ -50,7 +50,7 @@ def initialize(url: str) -> str | None:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--url", default="http://localhost:8000/mcp")
+    parser.add_argument("--url", default="http://localhost:8000/mcp/")
     parser.add_argument("--group-id", required=True)
     parser.add_argument("--name", required=True)
     parser.add_argument("--body-file", required=True)

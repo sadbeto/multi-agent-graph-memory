@@ -59,7 +59,7 @@ def call_tool(url: str, session_id: str | None, tool: str, arguments: dict, requ
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--url", default="http://localhost:8000/mcp")
+    parser.add_argument("--url", default="http://localhost:8000/mcp/")
     parser.add_argument("--group-id", required=True)
     parser.add_argument("--query", required=True)
     args = parser.parse_args()
