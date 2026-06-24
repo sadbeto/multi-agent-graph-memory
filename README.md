@@ -1,10 +1,10 @@
 # Persistent Graph Memory for Multi-Agent AI Systems
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Status: Case Study](https://img.shields.io/badge/status-case--study-green.svg)
-![Stack: Graphiti + FalkorDB](https://img.shields.io/badge/stack-Graphiti%20%2B%20FalkorDB-orange.svg)
-![MCP](https://img.shields.io/badge/protocol-MCP-purple.svg)
-![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)
+[![Status: Case Study](https://img.shields.io/badge/status-case--study-green.svg)](docs/safety-model.md)
+[![Stack: Graphiti + FalkorDB](https://img.shields.io/badge/stack-Graphiti%20%2B%20FalkorDB-orange.svg)](docs/architecture.md)
+[![MCP](https://img.shields.io/badge/protocol-MCP-purple.svg)](docs/mcp-integration.md)
+[![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](scripts/seed_agent_memory.py)
 
 A public-safe case study for the Guild I actually run day to day: one orchestrator, a handful of specialist agents, and a graph memory layer that keeps each lane useful without mixing everything together.
 
