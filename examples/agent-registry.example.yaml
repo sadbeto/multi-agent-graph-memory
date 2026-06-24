@@ -1,0 +1,30 @@
+agents:
+  - name: Router
+    namespace: router
+    domain: routing and coordination
+    can_write_namespaces: [router]
+    can_read_namespaces: [router]
+
+  - name: Security lane
+    namespace: security
+    domain: defensive security
+    can_write_namespaces: [security]
+    can_read_namespaces: [security]
+
+  - name: Research lane
+    namespace: research
+    domain: market research and risk notes
+    can_write_namespaces: [research]
+    can_read_namespaces: [research]
+
+  - name: Planning lane
+    namespace: planning
+    domain: planning and follow-up
+    can_write_namespaces: [planning]
+    can_read_namespaces: [planning]
+
+  - name: Build lane
+    namespace: build
+    domain: software development
+    can_write_namespaces: [build]
+    can_read_namespaces: [build]

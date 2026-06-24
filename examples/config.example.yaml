@@ -1,0 +1,17 @@
+# Example public-safe MCP config fragment.
+# This is intentionally sanitized and may need adaptation for your runtime.
+
+mcp_servers:
+  graphiti:
+    transport: streamable_http
+    url: http://localhost:8000/mcp/
+    timeout_seconds: 30
+
+memory_policy:
+  default_group_id: router
+  namespace_rules:
+    Router: router
+    Security lane: security
+    Research lane: research
+    Planning lane: planning
+    Build lane: build

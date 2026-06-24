@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-docs:
+    name: Lint Markdown
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install markdownlint-cli
+        run: npm install -g markdownlint-cli
+
+      - name: Lint all markdown files
+        run: markdownlint '**/*.md' --ignore node_modules --config .markdownlint.json
+
+  validate-scripts:
+    name: Validate Python scripts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check syntax (py_compile)
+        run: |
+          python3 -m py_compile scripts/seed_agent_memory.py
+          python3 -m py_compile scripts/verify_namespace.py
+          echo "All scripts pass syntax check."
+
+      - name: Check shell scripts
+        run: |
+          bash -n scripts/check_graphiti_health.sh
+          echo "Shell scripts pass syntax check."
+
+  secret-scan:
+    name: Secret scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for accidental secrets
+        run: |
+          if grep -rn -E '(sk-[a-zA-Z0-9]{20,}|ghp_[a-zA-Z0-9]{36,}|Bearer [a-zA-Z0-9._-]{20,}|password=["'"'"'][^"'"'"']{4,}|secret=["'"'"'][^"'"'"']{4,})' . \
+            --include="*.md" --include="*.yaml" --include="*.yml" \
+            --include="*.json" --include="*.py" --include="*.sh" \
+            --exclude-dir=".git" \
+            --exclude="CONTRIBUTING.md" \
+            --exclude="ci.yml"; then
+            echo "::error::Potential secrets found — review before merging."
+            exit 1
+          fi
+          echo "No obvious secrets detected."
